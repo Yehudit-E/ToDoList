@@ -29,15 +29,15 @@ var app = builder.Build();
 app.UseCors("AllowAll");
 
 // הפעלת Swagger (רק בסביבת פיתוח)
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger(); // אפשר את Swagger
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "ToDo API V1");  // Swagger יטעין את ה-JSON
         c.RoutePrefix = string.Empty;  // אם תרצה לפתוח את Swagger UI ב-root (למשל: http://localhost:5204/ במקום http://localhost:5204/swagger)
     });
-}
+// }
 
 // הגדרת API Endpoints
 app.MapGet("/items", async (ToDoDbContext db) =>
