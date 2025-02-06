@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // הגדרת baseURL גלובלי
-axios.defaults.baseURL = "process.env.REACT_APP_API_URL;";
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;;
 axios.defaults.timeout = 5000;
 axios.defaults.headers["Content-Type"] = "application/json";
 
